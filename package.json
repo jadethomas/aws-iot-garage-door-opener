@@ -1,0 +1,26 @@
+{
+  "name": "aws-iot-garage-door-opener",
+  "version": "1.0.0",
+  "description": "opens my garage from the internet",
+  "main": "index.js",
+  "dependencies": {
+    "aws-iot-device-sdk": "^1.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadethomas/aws-iot-garage-door-opener.git"
+  },
+  "keywords": [
+    "IOT"
+  ],
+  "author": "Jade Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadethomas/aws-iot-garage-door-opener/issues"
+  },
+  "homepage": "https://github.com/jadethomas/aws-iot-garage-door-opener#readme"
+}
