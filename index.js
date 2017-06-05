@@ -1,5 +1,9 @@
 const awsIot = require('aws-iot-device-sdk');
+const wpi = require('wiring-pi');
+wpi.setup('wpi');
+wpi.pinMode(configPin, wpi.OUTPUT);
 
+const isLedOn = 0;
 
 
    //
@@ -46,6 +50,12 @@ device
    device
       .on('message', function(topic, payload) {
          console.log('message', topic, payload.toString());
+
+         wpi.digitalWrite(configPin, isLedOn );
+         setInterval(function() {         
+            wpi.digitalWrite(configPin, isLedOn );
+         }, 1000);
+
       });
 
   
