@@ -4,7 +4,8 @@
   "description": "opens my garage from the internet",
   "main": "index.js",
   "dependencies": {
-    "aws-iot-device-sdk": "^1.0.14"
+    "aws-iot-device-sdk": "^1.0.14",
+    "wiring-pi":"1.4.21"
   },
   "devDependencies": {},
   "scripts": {
