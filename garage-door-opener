@@ -1,0 +1,18 @@
+#!/bin/sh
+#/etc/init.d/garage-door-opener
+export PATH=$PATH:/usr/local/bin
+export NODE_PATH=$NODE_PATH:/home/pi/apps/aws-iot-garage-door-opener
+
+case "$1" in
+start)
+exec forever --sourceDir=/usr/local/bin/server -p /usr/local/bin/server garage-door-opener.js  #scriptarguments
+;;
+stop)
+exec forever stop --sourceDir=/usr/local/bin/server garage-door-opener.js
+;;
+*)
+echo "Usage: /etc/init.d/myService {start|stop}"
+exit 1
+;;
+esac
+exit 0
