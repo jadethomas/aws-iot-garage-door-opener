@@ -1,9 +1,16 @@
 const awsIot = require('aws-iot-device-sdk');
-//const wpi = require('wiring-pi');
-const configPin = 0;
-//wpi.setup('wpi');
-//wpi.pinMode(configPin, wpi.OUTPUT);
-
+const gpio = require('rpi-gpio');
+ 
+const pin   = 11;
+const delay = 1000;
+var blink = () => {
+	console.log('blink');
+	gpio.write(pin, 1);
+      setInterval(function() {         
+        gpio.write(pin, 0);
+      }, delay);
+}
+gpio.setup(pin, gpio.DIR_OUT);
    //
    // The device module exports an MQTT instance, which will attempt
    // to connect to the AWS IoT endpoint configured in the arguments.
@@ -48,10 +55,8 @@ device
 device
    .on('message', function(topic, payload) {
       console.log('message', topic, payload.toString());
-     // wpi.digitalWrite(configPin, 1 );
-      setInterval(function() {         
-       //  wpi.digitalWrite(configPin, 0 );
-      }, 1000);
+     blink();
    });
+
 
   
