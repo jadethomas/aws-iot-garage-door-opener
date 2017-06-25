@@ -1,7 +1,8 @@
 const awsIot = require('aws-iot-device-sdk');
-const wpi = require('wiring-pi');
-wpi.setup('wpi');
-wpi.pinMode(configPin, wpi.OUTPUT);
+//const wpi = require('wiring-pi');
+const configPin = 0;
+//wpi.setup('wpi');
+//wpi.pinMode(configPin, wpi.OUTPUT);
 
    //
    // The device module exports an MQTT instance, which will attempt
@@ -10,9 +11,9 @@ wpi.pinMode(configPin, wpi.OUTPUT);
    // handle.
    //
 const device = awsIot.device({
-   keyPath: '/home/pi/apps/aws-iot-garage-door/opener/certs/private.pem.key',
-   certPath: '/home/pi/apps/aws-iot-garage-door/opener/certs/certificate.pem.crt',
-   caPath: '/home/pi/apps/aws-iot-garage-door/opener/certs/root-CA.crt',
+   keyPath: '/home/pi/apps/aws-iot-garage-door-opener/certs/private.pem.key',
+   certPath: '/home/pi/apps/aws-iot-garage-door-opener/certs/certificate.pem.crt',
+   caPath: '/home/pi/apps/aws-iot-garage-door-opener/certs/root-CA.crt',
    clientId: 'garage-door',
    region: 'us-east-1',
    baseReconnectTimeMs: 4000,
@@ -47,9 +48,9 @@ device
 device
    .on('message', function(topic, payload) {
       console.log('message', topic, payload.toString());
-      wpi.digitalWrite(configPin, 1 );
+     // wpi.digitalWrite(configPin, 1 );
       setInterval(function() {         
-         wpi.digitalWrite(configPin, 0 );
+       //  wpi.digitalWrite(configPin, 0 );
       }, 1000);
    });
 

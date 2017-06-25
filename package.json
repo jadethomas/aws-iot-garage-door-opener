@@ -2,10 +2,10 @@
   "name": "aws-iot-garage-door-opener",
   "version": "1.0.0",
   "description": "opens my garage from the internet",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "aws-iot-device-sdk": "^1.0.14",
-    "wiring-pi":"2.2.1"
+    "wiring-pi":"^2.2.1"
   },
   "devDependencies": {},
   "scripts": {
