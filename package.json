@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "aws-iot-device-sdk": "^1.0.14",
-    "wiring-pi":"^2.2.1"
+    "rpi-gpio": "^0.8.1",
+    "wiring-pi": "^2.2.1"
   },
   "devDependencies": {},
   "scripts": {
